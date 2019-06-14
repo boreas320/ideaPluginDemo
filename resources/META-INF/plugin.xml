@@ -1,0 +1,51 @@
+<idea-plugin>
+    <id>org.boreas320.ideaplugindemo</id>
+    <name>ideaplugindemo</name>
+    <version>1.0</version>
+    <vendor email="xiangshuai320@gmail.com" url="http://boreas320.org">Boreas320</vendor>
+
+    <description>
+        实现按钮点击
+        实现项目启动弹窗
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    </description>
+
+    <change-notes>
+        实现一些功能来进行plugin的开发学习
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+    <application-components>
+
+    </application-components>
+    <project-components>
+        <component>
+            <interface-class>org.boreas320.ideaplugindemo.component.SayHelloComponent</interface-class>
+            <implementation-class>org.boreas320.ideaplugindemo.component.impl.SayHelloComponentImpl
+            </implementation-class>
+        </component>
+    </project-components>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <applicationService serviceInterface="org.boreas320.ideaplugindemo.service.SayHelloService"
+                            serviceImplementation="org.boreas320.ideaplugindemo.service.impl.SayHelloServiceImpl"/>
+        <toolWindow id="hohoho" anchor="right" secondary="true"
+                    factoryClass="org.boreas320.ideaplugindemo.view.DemoToolWindowFactory"></toolWindow>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="HelloWorld" class="org.boreas320.ideaplugindemo.action.HelloWorldAction" text="Say Hello!">
+            <add-to-group group-id="WindowMenu" anchor="first"/>
+        </action>
+    </actions>
+
+</idea-plugin>
